@@ -39,11 +39,11 @@ A substantial frontend task is not considered complete until the rendered interf
 | Skill | Role | Source |
 |---|---|---|
 | `frontend-design` | Primary frontend design and implementation | [Anthropic Skills](https://github.com/anthropics/skills/tree/main/skills/frontend-design) |
-| `design-reference-analyzer` | Extract transferable design language from references | Local / custom Skill |
-| `art-direction` | Create project-specific visual direction before implementation | Local / custom Skill |
-| `anti-ai-ui-review` | Detect generic or AI-looking UI patterns | Local / custom Skill |
-| `visual-qa` | Rendered visual and responsive QA | Local / custom Skill |
-| `ui-ux-pro-max` | Supporting UX, accessibility, and design knowledge | Local / custom Skill |
+| `design-reference-analyzer` | Extract transferable design language from references | [Nima repository](https://github.com/nima13831383/nima-design-reference-analyzer) |
+| `art-direction` | Create project-specific visual direction before implementation | [Nima repository](https://github.com/nima13831383/nima-art-direction) |
+| `anti-ai-ui-review` | Detect generic or AI-looking UI patterns | [Nima repository](https://github.com/nima13831383/nima-anti-ai-ui-review) |
+| `visual-qa` | Rendered visual and responsive QA | [Nima repository](https://github.com/nima13831383/nima-visual-qa) |
+| `ui-ux-pro-max` | Supporting UX, accessibility, and design knowledge | Local dependency — source currently unpublished |
 | `browser-runtime-inspector` | Browser, DOM, runtime, and geometry inspection | [nima13831383/playwright-browser-inspector](https://github.com/nima13831383/playwright-browser-inspector) |
 
 Nima Front Skill orchestrates these Skills; it does not bundle or redistribute them unless explicitly present in this repository.
@@ -146,6 +146,38 @@ This keeps repository-only files such as `.git`, `README.md`, `LICENSE`, and `di
 
 The ZIP contains only the installable Skill package: `SKILL.md`, `agents/openai.yaml`, and the three reference files.
 
+## Installing Dependencies
+
+Nima Front is an orchestrator and works best with the full dependency stack installed. Skill names must remain unchanged because the orchestrator references them by name.
+
+Expected Codex layout:
+
+```text
+~/.codex/skills/
+├── nima-front/
+├── frontend-design/
+├── design-reference-analyzer/
+├── art-direction/
+├── anti-ai-ui-review/
+├── visual-qa/
+├── ui-ux-pro-max/
+└── browser-runtime-inspector/
+```
+
+### Individual install links
+
+| Dependency | Repository or source | Package status |
+|---|---|---|
+| `frontend-design` | [Anthropic Skills](https://github.com/anthropics/skills/tree/main/skills/frontend-design) | Install from upstream |
+| `design-reference-analyzer` | [nima-design-reference-analyzer](https://github.com/nima13831383/nima-design-reference-analyzer) | Repository ZIP and `dist/skill.zip`; Release pending |
+| `art-direction` | [nima-art-direction](https://github.com/nima13831383/nima-art-direction) | Repository ZIP and `dist/skill.zip`; Release pending |
+| `anti-ai-ui-review` | [nima-anti-ai-ui-review](https://github.com/nima13831383/nima-anti-ai-ui-review) | Repository ZIP and `dist/skill.zip`; Release pending |
+| `visual-qa` | [nima-visual-qa](https://github.com/nima13831383/nima-visual-qa) | Repository ZIP and `dist/skill.zip`; Release pending |
+| `ui-ux-pro-max` | Local dependency | Source currently unpublished; do not guess or redistribute |
+| `browser-runtime-inspector` | [playwright-browser-inspector](https://github.com/nima13831383/playwright-browser-inspector) | Use the verified upstream repository |
+
+Each custom repository contains its own `dist/skill.zip`. Until a GitHub Release is created, use the repository ZIP or download the package from the repository’s `dist` path. No install-all helper is included because the custom repository targets are not yet public and third-party provenance is intentionally not guessed.
+
 ## Usage examples
 
 ### Without a reference
@@ -206,7 +238,7 @@ Verification: UNVERIFIED
 
 ## Project status
 
-This is an orchestration Skill. It does not automatically install its dependencies, and several dependencies may be local/custom Skills in a given Codex environment. Missing dependencies may reduce or prevent parts of the workflow; the agent should report that limitation rather than pretending the full pipeline ran.
+This is an orchestration Skill. It does not automatically install its dependencies. Four custom dependencies are prepared in local publishing workspaces, but their GitHub repositories still require manual creation because GitHub CLI is unavailable in the current environment. `ui-ux-pro-max` remains a local dependency with currently unpublished source because its provenance could not be verified. Missing dependencies may reduce or prevent parts of the workflow; the agent should report that limitation rather than pretending the full pipeline ran.
 
 ## License
 
