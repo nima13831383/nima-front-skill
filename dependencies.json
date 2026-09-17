@@ -1,0 +1,15 @@
+{
+  "bundled": [
+    "design-reference-analyzer",
+    "art-direction",
+    "anti-ai-ui-review",
+    "visual-qa"
+  ],
+  "external": {
+    "frontend-design": "https://github.com/anthropics/skills/tree/main/skills/frontend-design",
+    "browser-runtime-inspector": "https://github.com/nima13831383/playwright-browser-inspector"
+  },
+  "optional": [
+    "ui-ux-pro-max"
+  ]
+}
