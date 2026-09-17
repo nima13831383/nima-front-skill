@@ -8,9 +8,7 @@ It is a control plane for substantial frontend work. It routes work to specialis
 
 ### Latest Skill Package
 
-The installable package is attached to the `v1.0.0` GitHub Release:
-
-<https://github.com/nima13831383/nima-front-skill/releases/latest/download/skill.zip>
+GitHub CLI was not available when this repository was published, so no Release URL is claimed. The installable package is available at [`dist/skill.zip`](dist/skill.zip) in the repository.
 
 ### Repository ZIP
 
@@ -142,7 +140,7 @@ This keeps repository-only files such as `.git`, `README.md`, `LICENSE`, and `di
 
 ### ZIP installation
 
-1. Download [`skill.zip`](https://github.com/nima13831383/nima-front-skill/releases/latest/download/skill.zip).
+1. Download [`dist/skill.zip`](dist/skill.zip) from the repository, or use the repository ZIP above.
 2. Extract it into `~/.codex/skills/` so the package creates `~/.codex/skills/nima-front/`.
 3. Reload or restart Codex Skill discovery.
 
