@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nima Front Skill"
+  short_description: "Orchestrate frontend design, implementation, and QA"
+  default_prompt: "Use $nima-front to deliver this frontend end to end with browser visual verification."
